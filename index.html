@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>獵戶科技 OrionGO | 全場域智慧生態系</title>
+    <!-- 引入 Tailwind CSS 框架 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Google Fonts (Inter 字體) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #fff;
+            scroll-behavior: smooth;
+        }
+        
+        /* 英雄區塊的背景設定 */
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* 導覽列滾動時的背景過渡效果 */
+        .nav-transition {
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- 導覽列 -->
+    <nav id="navbar" class="fixed w-full z-50 px-6 py-4 nav-transition flex justify-between items-center">
+        <div class="text-2xl font-bold tracking-widest uppercase cursor-pointer">
+            OrionGO
+        </div>
+        <!-- 桌機版選單 -->
+        <div class="hidden md:flex space-x-8 text-sm font-semibold tracking-wide uppercase">
+            <a href="#services" class="hover:text-gray-400 transition">服務領域</a>
+            <a href="#ecosystem" class="hover:text-gray-400 transition">智慧生態系</a>
+			<a href="#history" class="hover:text-gray-400 transition">公司沿革</a>
+            <a href="#engineering" class="hover:text-gray-400 transition">先進工程</a>
+            <a href="#careers" class="hover:text-gray-400 transition">招募資訊</a>
+        </div>
+        <!-- 漢堡選單圖示 -->
+        <div class="md:hidden">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </div>
+    </nav>
+
+    <!-- 英雄區塊 (Hero Section) -->
+    <header class="h-screen hero-bg flex flex-col justify-center items-center text-center px-4">
+        <h2 class="text-sm md:text-xl font-light tracking-[0.3em] uppercase mb-4 animate-fade-in-up">探索無限可能</h2>
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight uppercase mb-8">
+            推進未來科技
+        </h1>
+        <p class="max-w-2xl text-lg md:text-xl text-gray-300 mb-10">
+            從地球軌道到深空探測，我們致力於提供最可靠的發射系統與創新的工程解決方案。
+        </p>
+        <a href="#services" class="border-2 border-white text-white px-8 py-3 uppercase tracking-widest font-semibold hover:bg-white hover:text-black transition duration-300">
+            了解我們的任務
+        </a>
+    </header>
+
+    <!-- 服務領域區塊 (四大領域) -->
+    <section id="services" class="py-24 bg-zinc-950">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-wider mb-4">核心服務範疇</h2>
+                <div class="w-24 h-1 bg-white mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 領域 1: 基礎設施 -->
+                <div class="group relative overflow-hidden cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" alt="基礎設施" class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-2xl font-bold uppercase mb-2">基礎設施</h3>
+                        <p class="text-gray-300 text-sm">打造穩固、永續且具備高度韌性的現代化工程與實體基礎建設。</p>
+                    </div>
+                </div>
+                
+                <!-- 領域 2: 數位基礎 -->
+                <div class="group relative overflow-hidden cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop" alt="數位基礎" class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-2xl font-bold uppercase mb-2">數位基礎</h3>
+                        <p class="text-gray-300 text-sm">建構高速網路與雲端架構，驅動數據流動並加速企業數位轉型。</p>
+                    </div>
+                </div>
+
+                <!-- 領域 3: AI管理 -->
+                <div class="group relative overflow-hidden cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop" alt="AI管理" class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-2xl font-bold uppercase mb-2">AI 管理</h3>
+                        <p class="text-gray-300 text-sm">運用先進的人工智慧與機器學習技術，優化系統決策與營運效率。</p>
+                    </div>
+                </div>
+
+                <!-- 領域 4: 創新國防 -->
+                <div class="group relative overflow-hidden cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1559297434-fae8a1916a79?q=80&w=2070&auto=format&fit=crop" alt="創新國防" class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6">
+                        <h3 class="text-2xl font-bold uppercase mb-2">創新國防</h3>
+                        <p class="text-gray-300 text-sm">整合尖端科技與航空專業，提供全方位的新世代國防與安全解決方案。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 獵戶科技生態系區塊 (OrionGO Ecosystem) -->
+    <section id="ecosystem" class="relative py-24 bg-black overflow-hidden">
+        <!-- 背景裝飾光暈 -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-900/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-wider mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                    次世代全場域智慧生態系
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    打破實體與數位的疆界。從前端感知、邊緣運算到多智能體 AI 決策，我們提供無縫接軌的數位雙生與基礎設施解決方案。
+                </p>
+            </div>
+            
+            <!-- 生態系架構網格 -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- 第一層：感知與邊緣 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-md hover:bg-white/10 transition duration-300">
+                    <div class="text-blue-400 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.5 18.25v-.5"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">感知與邊緣層</h3>
+                    <ul class="space-y-3 text-gray-300 text-sm">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span> 物聯網裝置 (IoT)</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span> 高精度環境感測器</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span> 無線通訊設備</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span> EDGE 邊緣應用端</li>
+                    </ul>
+                </div>
+
+                <!-- 第二層：核心數位化 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-md hover:bg-white/10 transition duration-300 relative transform lg:-translate-y-4">
+                    <div class="hidden lg:block absolute -left-8 top-1/2 w-8 h-[1px] bg-gradient-to-r from-transparent to-blue-500"></div>
+                    <div class="hidden lg:block absolute -right-8 top-1/2 w-8 h-[1px] bg-gradient-to-r from-blue-500 to-transparent"></div>
+                    
+                    <div class="text-purple-400 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">核心數位雙生</h3>
+                    <ul class="space-y-3 text-gray-300 text-sm">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span> 空間定位技術</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span> 數位圖資重建技術</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span> Web/Mobile 管理平台</li>
+                    </ul>
+                </div>
+
+                <!-- 第三層：AI 與應用 -->
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-md hover:bg-white/10 transition duration-300">
+                    <div class="text-pink-400 mb-4">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">智慧與應用層</h3>
+                    <ul class="space-y-3 text-gray-300 text-sm">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-500 rounded-full mr-3"></span> Multi-Agent AI 服務</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-500 rounded-full mr-3"></span> 信用卡支付基礎設施</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-500 rounded-full mr-3"></span> 全場域智慧營運</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 關於工程與創新 -->
+    <section id="engineering" class="py-24 bg-zinc-950 flex flex-col md:flex-row items-center">
+        <div class="w-full md:w-1/2 h-96 md:h-auto">
+            <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=2008&auto=format&fit=crop" alt="太空站與工程" class="w-full h-full object-cover">
+        </div>
+        <div class="w-full md:w-1/2 p-12 md:p-24">
+            <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-wider mb-6">突破工程極限</h2>
+            <p class="text-gray-400 leading-relaxed mb-8">
+                我們結合了頂尖的系統整合能力與快速迭代開發精神。從航空電子設備到前瞻的數位架構，我們致力於打破傳統，定義未來的科技標準。
+            </p>
+            <a href="#" class="inline-block border-b-2 border-white pb-1 text-sm uppercase tracking-widest font-semibold hover:text-gray-400 hover:border-gray-400 transition">
+                探索我們的技術架構 &rarr;
+            </a>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="bg-black py-12 border-t border-zinc-800">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+            <div class="mb-4 md:mb-0">
+                &copy; 2026 OrionGO Inc. All rights reserved.
+            </div>
+            <div class="flex space-x-6 uppercase tracking-wider">
+                <a href="#" class="hover:text-white transition">聯絡我們</a>
+                <a href="#" class="hover:text-white transition">服務條款</a>
+                <a href="#" class="hover:text-white transition">隱私政策</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript 處理導覽列滾動效果 -->
+    <script>
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-black', 'bg-opacity-90', 'backdrop-blur-sm');
+                navbar.classList.remove('py-4');
+                navbar.classList.add('py-2');
+            } else {
+                navbar.classList.remove('bg-black', 'bg-opacity-90', 'backdrop-blur-sm');
+                navbar.classList.remove('py-2');
+                navbar.classList.add('py-4');
+            }
+        });
+    </script>
+</body>
+</html>
+
+<section id="history" class="py-32 bg-black relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div class="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] bg-blue-900/10 rounded-full blur-[150px]"></div>
+            <div class="absolute -bottom-[20%] -right-[10%] w-[50%] h-[50%] bg-purple-900/10 rounded-full blur-[150px]"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="mb-24">
+                <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-6 uppercase">
+                    Our Journey.<br>
+                    <span class="text-gray-500">Defining the New Possible.</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-xl font-light">
+                    從單一設想出發，到重新定義全球基礎設施。這不僅是時間的推移，更是技術邊界的擴張。
+                </p>
+            </div>
+
+            <div class="space-y-32">
+                
+                <div class="flex flex-col md:flex-row gap-12 items-start group">
+                    <div class="md:w-1/3">
+                        <span class="text-6xl md:text-8xl font-black text-white/10 group-hover:text-blue-500/30 transition-colors duration-700 italic">2020</span>
+                    </div>
+                    <div class="md:w-2/3 border-t border-zinc-800 pt-8">
+                        <h3 class="text-2xl font-bold uppercase tracking-widest text-blue-400 mb-4">The Genesis</h3>
+                        <h4 class="text-3xl md:text-4xl font-bold mb-6">挑戰重力的開端</h4>
+                        <p class="text-gray-400 text-lg leading-relaxed font-light">
+                            OrionGO 於矽谷與台北同步啟動。我們不只是成立一家公司，而是為了解決跨場域通訊的底層限制。在第一年，我們完成了初步的「全空間定位算法」，奠定了全場域智慧生態系的基石。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-12 items-start group">
+                    <div class="md:w-1/3">
+                        <span class="text-6xl md:text-8xl font-black text-white/10 group-hover:text-purple-500/30 transition-colors duration-700 italic">2022</span>
+                    </div>
+                    <div class="md:w-2/3 border-t border-zinc-800 pt-8">
+                        <h3 class="text-2xl font-bold uppercase tracking-widest text-purple-400 mb-4">The Breakthrough</h3>
+                        <h4 class="text-3xl md:text-4xl font-bold mb-6">數位雙生的奇點</h4>
+                        <p class="text-gray-400 text-lg leading-relaxed font-light">
+                            這一年，我們成功將實體空間與數位數據完整對標。OrionGO 數位雙生平台首度應用於大型智慧工業區，透過邊緣運算減少了 40% 的能源浪費。我們開始證明，科技能真正改善物理世界的效率。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-12 items-start group">
+                    <div class="md:w-1/3">
+                        <span class="text-6xl md:text-8xl font-black text-white/10 group-hover:text-pink-500/30 transition-colors duration-700 italic">2024</span>
+                    </div>
+                    <div class="md:w-2/3 border-t border-zinc-800 pt-8">
+                        <h3 class="text-2xl font-bold uppercase tracking-widest text-pink-400 mb-4">Global Impact</h3>
+                        <h4 class="text-3xl md:text-4xl font-bold mb-6">定義新世代國防</h4>
+                        <p class="text-gray-400 text-lg leading-relaxed font-light">
+                            Multi-Agent AI 系統正式商用化。OrionGO 的技術被整合進新世代安全架構中，提供無人干預的自主反應系統。我們在航空、國防與關鍵基礎設施領域成為全球合作夥伴。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-12 items-start group">
+                    <div class="md:w-1/3">
+                        <span class="text-6xl md:text-8xl font-black text-white/20 group-hover:text-white transition-colors duration-700 italic">2026</span>
+                    </div>
+                    <div class="md:w-2/3 border-t border-white pt-8">
+                        <h3 class="text-2xl font-bold uppercase tracking-widest text-white mb-4">The New Frontier</h3>
+                        <h4 class="text-3xl md:text-4xl font-bold mb-6">全自動化社會的基石</h4>
+                        <p class="text-gray-400 text-lg leading-relaxed font-light font-medium">
+                            未來已至。我們的「全場域智慧生態系」已成為智慧城市運行的標準協議。從邊緣到雲端，OrionGO 正在構建一個更加智能、高效且永續的自動化世界。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
