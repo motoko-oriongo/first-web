@@ -1,308 +1,633 @@
-﻿<!DOCTYPE html>
-<html lang="zh-TW">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>獵戶科技 OrionGO | 全場域智慧生態系</title>
-    <!-- 引入 Tailwind CSS 框架 -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 引入 Google Fonts (Inter 字體) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #000;
-            color: #fff;
-            scroll-behavior: smooth;
-        }
-        
-        /* 英雄區塊的背景設定 */
-        .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aegis Privacy — Airport Security ESG Dashboard</title>
 
-        /* 導覽列滾動時的背景過渡效果 */
-        .nav-transition {
-            transition: background-color 0.3s ease;
-        }
-    </style>
-</head>
-<body class="antialiased">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- 導覽列 -->
-    <nav id="navbar" class="fixed w-full z-50 px-6 py-4 nav-transition flex justify-between items-center">
-        <div class="text-2xl font-bold tracking-widest uppercase cursor-pointer">
-            OrionGO
-        </div>
-        <!-- 桌機版選單 -->
-        <div class="hidden md:flex space-x-8 text-sm font-semibold tracking-wide uppercase">
-            <a href="#services" class="hover:text-gray-400 transition">服務領域</a>
-            <a href="#ecosystem" class="hover:text-gray-400 transition">智慧生態系</a>
-			<a href="#history" class="hover:text-gray-400 transition">公司沿革</a>
-            <a href="#engineering" class="hover:text-gray-400 transition">先進工程</a>
-            <a href="#careers" class="hover:text-gray-400 transition">招募資訊</a>
-        </div>
-        <!-- 漢堡選單圖示 -->
-        <div class="md:hidden">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </div>
-    </nav>
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-    <!-- 英雄區塊 (Hero Section) -->
-    <header class="h-screen hero-bg flex flex-col justify-center items-center text-center px-4">
-        <h2 class="text-sm md:text-xl font-light tracking-[0.3em] uppercase mb-4 animate-fade-in-up">探索無限可能</h2>
-        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight uppercase mb-8">
-            推進未來科技
-        </h1>
-        <p class="max-w-2xl text-lg md:text-xl text-gray-300 mb-10">
-            從地球軌道到深空探測，我們致力於提供最可靠的發射系統與創新的工程解決方案。
-        </p>
-        <a href="#services" class="border-2 border-white text-white px-8 py-3 uppercase tracking-widest font-semibold hover:bg-white hover:text-black transition duration-300">
-            了解我們的任務
-        </a>
-    </header>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- 服務領域區塊 (四大領域) -->
-    <section id="services" class="py-24 bg-zinc-950">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-wider mb-4">核心服務範疇</h2>
-                <div class="w-24 h-1 bg-white mx-auto"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- 領域 1: 基礎設施 -->
-                <div class="group relative overflow-hidden cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" alt="基礎設施" class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-6">
-                        <h3 class="text-2xl font-bold uppercase mb-2">基礎設施</h3>
-                        <p class="text-gray-300 text-sm">打造穩固、永續且具備高度韌性的現代化工程與實體基礎建設。</p>
-                    </div>
-                </div>
-                
-                <!-- 領域 2: 數位基礎 -->
-                <div class="group relative overflow-hidden cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop" alt="數位基礎" class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-6">
-                        <h3 class="text-2xl font-bold uppercase mb-2">數位基礎</h3>
-                        <p class="text-gray-300 text-sm">建構高速網路與雲端架構，驅動數據流動並加速企業數位轉型。</p>
-                    </div>
-                </div>
-
-                <!-- 領域 3: AI管理 -->
-                <div class="group relative overflow-hidden cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop" alt="AI管理" class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-6">
-                        <h3 class="text-2xl font-bold uppercase mb-2">AI 管理</h3>
-                        <p class="text-gray-300 text-sm">運用先進的人工智慧與機器學習技術，優化系統決策與營運效率。</p>
-                    </div>
-                </div>
-
-                <!-- 領域 4: 創新國防 -->
-                <div class="group relative overflow-hidden cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1559297434-fae8a1916a79?q=80&w=2070&auto=format&fit=crop" alt="創新國防" class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-6">
-                        <h3 class="text-2xl font-bold uppercase mb-2">創新國防</h3>
-                        <p class="text-gray-300 text-sm">整合尖端科技與航空專業，提供全方位的新世代國防與安全解決方案。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 獵戶科技生態系區塊 (OrionGO Ecosystem) -->
-    <section id="ecosystem" class="relative py-24 bg-black overflow-hidden">
-        <!-- 背景裝飾光暈 -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-900/20 rounded-full blur-[120px] pointer-events-none"></div>
-
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-wider mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
-                    次世代全場域智慧生態系
-                </h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">
-                    打破實體與數位的疆界。從前端感知、邊緣運算到多智能體 AI 決策，我們提供無縫接軌的數位雙生與基礎設施解決方案。
-                </p>
-            </div>
-            
-            <!-- 生態系架構網格 -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                
-                <!-- 第一層：感知與邊緣 -->
-                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-md hover:bg-white/10 transition duration-300">
-                    <div class="text-blue-400 mb-4">
-                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.5 18.25v-.5"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">感知與邊緣層</h3>
-                    <ul class="space-y-3 text-gray-300 text-sm">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span> 物聯網裝置 (IoT)</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span> 高精度環境感測器</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span> 無線通訊設備</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span> EDGE 邊緣應用端</li>
-                    </ul>
-                </div>
-
-                <!-- 第二層：核心數位化 -->
-                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-md hover:bg-white/10 transition duration-300 relative transform lg:-translate-y-4">
-                    <div class="hidden lg:block absolute -left-8 top-1/2 w-8 h-[1px] bg-gradient-to-r from-transparent to-blue-500"></div>
-                    <div class="hidden lg:block absolute -right-8 top-1/2 w-8 h-[1px] bg-gradient-to-r from-blue-500 to-transparent"></div>
-                    
-                    <div class="text-purple-400 mb-4">
-                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">核心數位雙生</h3>
-                    <ul class="space-y-3 text-gray-300 text-sm">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span> 空間定位技術</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span> 數位圖資重建技術</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span> Web/Mobile 管理平台</li>
-                    </ul>
-                </div>
-
-                <!-- 第三層：AI 與應用 -->
-                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-md hover:bg-white/10 transition duration-300">
-                    <div class="text-pink-400 mb-4">
-                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">智慧與應用層</h3>
-                    <ul class="space-y-3 text-gray-300 text-sm">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-500 rounded-full mr-3"></span> Multi-Agent AI 服務</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-500 rounded-full mr-3"></span> 信用卡支付基礎設施</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-500 rounded-full mr-3"></span> 全場域智慧營運</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 關於工程與創新 -->
-    <section id="engineering" class="py-24 bg-zinc-950 flex flex-col md:flex-row items-center">
-        <div class="w-full md:w-1/2 h-96 md:h-auto">
-            <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?q=80&w=2008&auto=format&fit=crop" alt="太空站與工程" class="w-full h-full object-cover">
-        </div>
-        <div class="w-full md:w-1/2 p-12 md:p-24">
-            <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-wider mb-6">突破工程極限</h2>
-            <p class="text-gray-400 leading-relaxed mb-8">
-                我們結合了頂尖的系統整合能力與快速迭代開發精神。從航空電子設備到前瞻的數位架構，我們致力於打破傳統，定義未來的科技標準。
-            </p>
-            <a href="#" class="inline-block border-b-2 border-white pb-1 text-sm uppercase tracking-widest font-semibold hover:text-gray-400 hover:border-gray-400 transition">
-                探索我們的技術架構 &rarr;
-            </a>
-        </div>
-    </section>
-
-    <!-- 頁尾 -->
-    <footer class="bg-black py-12 border-t border-zinc-800">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-            <div class="mb-4 md:mb-0">
-                &copy; 2026 OrionGO Inc. All rights reserved.
-            </div>
-            <div class="flex space-x-6 uppercase tracking-wider">
-                <a href="#" class="hover:text-white transition">聯絡我們</a>
-                <a href="#" class="hover:text-white transition">服務條款</a>
-                <a href="#" class="hover:text-white transition">隱私政策</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript 處理導覽列滾動效果 -->
-    <script>
-        const navbar = document.getElementById('navbar');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-black', 'bg-opacity-90', 'backdrop-blur-sm');
-                navbar.classList.remove('py-4');
-                navbar.classList.add('py-2');
-            } else {
-                navbar.classList.remove('bg-black', 'bg-opacity-90', 'backdrop-blur-sm');
-                navbar.classList.remove('py-2');
-                navbar.classList.add('py-4');
+  <!-- Tailwind config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dash: {
+              bg:      '#030810',
+              sidebar: '#040c1a',
+              card:    '#060f1e',
+              border:  '#0d1e36',
+              row:     '#050d18',
             }
-        });
-    </script>
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ── Base ────────────────────────────────────────────────────────── */
+    * { box-sizing: border-box; }
+    body { font-family: 'Segoe UI', 'Inter', system-ui, sans-serif; }
+
+    /* ── Custom scrollbar ────────────────────────────────────────────── */
+    ::-webkit-scrollbar            { width: 4px; height: 4px; }
+    ::-webkit-scrollbar-track      { background: transparent; }
+    ::-webkit-scrollbar-thumb      { background: #0d1e36; border-radius: 99px; }
+    ::-webkit-scrollbar-thumb:hover{ background: #1a3255; }
+
+    /* ── Pulse animation ─────────────────────────────────────────────── */
+    @keyframes pulse-ring {
+      0%,100% { opacity:1; transform:scale(1); }
+      50%      { opacity:.45; transform:scale(.75); }
+    }
+    .live-dot { animation: pulse-ring 1.6s ease-in-out infinite; }
+
+    /* ── Glow helpers ────────────────────────────────────────────────── */
+    .glow-blue   { box-shadow: 0 0 22px rgba(59,130,246,.18); }
+    .glow-green  { box-shadow: 0 0 22px rgba(16,185,129,.14); }
+    .glow-export { box-shadow: 0 4px 24px rgba(59,130,246,.35); }
+
+    /* ── Sidebar nav active state ────────────────────────────────────── */
+    .nav-active {
+      background  : rgba(59,130,246,.12);
+      color       : #93c5fd;
+      border      : 1px solid rgba(59,130,246,.22);
+    }
+
+    /* ── Card hover ──────────────────────────────────────────────────── */
+    .c-hover { transition: border-color .2s, box-shadow .2s; }
+    .c-hover:hover {
+      border-color : rgba(59,130,246,.3);
+      box-shadow   : 0 0 22px rgba(59,130,246,.08);
+    }
+
+    /* ── Row hover ───────────────────────────────────────────────────── */
+    .r-hover { transition: background .15s, border-color .15s; }
+    .r-hover:hover {
+      background   : rgba(8,26,50,.85);
+      border-color : rgba(59,130,246,.22);
+    }
+
+    /* ── Logo gradient ───────────────────────────────────────────────── */
+    .logo-icon {
+      background  : linear-gradient(135deg,#3b82f6,#22d3ee);
+      box-shadow  : 0 0 14px rgba(59,130,246,.45);
+    }
+
+    /* ── Progress bar fill ───────────────────────────────────────────── */
+    .bar-fill { transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+
+    /* ── Ticker animation ────────────────────────────────────────────── */
+    @keyframes slide-up {
+      from { opacity:0; transform:translateY(6px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    .slide-up { animation: slide-up .35s ease forwards; }
+  </style>
+</head>
+
+<body class="bg-dash-bg text-gray-100 h-screen overflow-hidden flex select-none">
+
+<!-- ════════════════════════════════════════════════════════════════════
+     SIDEBAR
+════════════════════════════════════════════════════════════════════ -->
+<aside class="w-[220px] flex-shrink-0 bg-dash-sidebar border-r border-dash-border flex flex-col z-10">
+
+  <!-- Logo -->
+  <div class="h-16 flex items-center px-5 gap-3 border-b border-dash-border flex-shrink-0">
+    <div class="logo-icon w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0">
+      <i class="fa-solid fa-shield text-white text-[15px]"></i>
+    </div>
+    <div class="leading-none">
+      <p class="text-[14px] font-extrabold text-white tracking-[.12em]">AEGIS</p>
+      <p class="text-[9px] font-bold text-blue-400 tracking-[.32em] mt-[2px]">PRIVACY</p>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <nav class="flex-1 py-5 px-3 space-y-[3px] overflow-y-auto">
+    <a href="#" class="nav-active flex items-center gap-3 px-3 py-[10px] rounded-xl text-[13px] font-semibold">
+      <i class="fa-solid fa-chart-line w-4 text-center text-blue-400"></i>
+      Overview
+    </a>
+    <a href="#" class="flex items-center gap-3 px-3 py-[10px] rounded-xl text-[13px] font-medium text-gray-500 hover:text-gray-200 hover:bg-white/[.04] transition-colors">
+      <i class="fa-solid fa-location-dot w-4 text-center"></i>
+      Locations
+    </a>
+    <a href="#" class="flex items-center gap-3 px-3 py-[10px] rounded-xl text-[13px] font-medium text-gray-500 hover:text-gray-200 hover:bg-white/[.04] transition-colors">
+      <i class="fa-solid fa-file-lines w-4 text-center"></i>
+      ESG Reports
+    </a>
+    <a href="#" class="flex items-center gap-3 px-3 py-[10px] rounded-xl text-[13px] font-medium text-gray-500 hover:text-gray-200 hover:bg-white/[.04] transition-colors">
+      <i class="fa-solid fa-tablet-screen-button w-4 text-center"></i>
+      Device Mgmt
+    </a>
+    <a href="#" class="flex items-center gap-3 px-3 py-[10px] rounded-xl text-[13px] font-medium text-gray-500 hover:text-gray-200 hover:bg-white/[.04] transition-colors">
+      <i class="fa-solid fa-gear w-4 text-center"></i>
+      Settings
+    </a>
+
+    <!-- Divider label -->
+    <p class="pt-5 pb-2 px-3 text-[9px] font-bold text-gray-700 uppercase tracking-widest">Compliance</p>
+    <a href="#" class="flex items-center gap-3 px-3 py-[10px] rounded-xl text-[13px] font-medium text-gray-500 hover:text-gray-200 hover:bg-white/[.04] transition-colors">
+      <i class="fa-solid fa-scale-balanced w-4 text-center"></i>
+      GDPR Audit
+    </a>
+    <a href="#" class="flex items-center gap-3 px-3 py-[10px] rounded-xl text-[13px] font-medium text-gray-500 hover:text-gray-200 hover:bg-white/[.04] transition-colors">
+      <i class="fa-solid fa-leaf w-4 text-center"></i>
+      ESG Scoring
+    </a>
+  </nav>
+
+  <!-- Sidebar footer -->
+  <div class="px-5 py-4 border-t border-dash-border flex-shrink-0">
+    <div class="flex items-center gap-2 text-[11px] text-gray-600">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 live-dot flex-shrink-0"></span>
+      All systems operational
+    </div>
+    <p class="mt-1 text-[10px] text-gray-700">v2.4.1 &nbsp;·&nbsp; EU GDPR Compliant</p>
+  </div>
+</aside>
+
+<!-- ════════════════════════════════════════════════════════════════════
+     MAIN COLUMN
+════════════════════════════════════════════════════════════════════ -->
+<div class="flex-1 flex flex-col overflow-hidden min-w-0">
+
+  <!-- ── Top Header ───────────────────────────────────────────────── -->
+  <header class="h-16 bg-dash-sidebar border-b border-dash-border flex items-center px-6 gap-4 flex-shrink-0">
+
+    <!-- Title block -->
+    <div class="min-w-0">
+      <h1 class="text-[15px] font-extrabold text-white truncate">
+        Taiwan Airports Security &amp; ESG Overview
+      </h1>
+      <p class="text-[10px] text-gray-600 mt-[2px]">
+        Anti-Hidden Camera Detection · 11″ Sensor Tablet Array · 4 International Airports
+      </p>
+    </div>
+
+    <!-- Right controls -->
+    <div class="flex items-center gap-2.5 ml-auto flex-shrink-0">
+
+      <!-- LIVE pill -->
+      <span class="hidden sm:flex items-center gap-1.5 text-[10px] text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-3 py-[5px] rounded-full font-bold tracking-wide">
+        <span class="w-[6px] h-[6px] rounded-full bg-emerald-400 live-dot"></span>
+        LIVE
+      </span>
+
+      <!-- UTC clock -->
+      <span id="utcClock" class="hidden lg:block text-[11px] text-gray-600 font-mono bg-[#071428] border border-dash-border px-3 py-[5px] rounded-lg tracking-wide"></span>
+
+      <!-- Refresh -->
+      <button onclick="triggerRefresh()" class="p-[9px] rounded-xl text-gray-500 hover:text-blue-300 hover:bg-blue-500/10 transition-all" title="Refresh data">
+        <i id="refreshIcon" class="fa-solid fa-arrows-rotate text-[13px]"></i>
+      </button>
+
+      <!-- Notifications -->
+      <button class="relative p-[9px] rounded-xl text-gray-500 hover:text-amber-300 hover:bg-amber-500/10 transition-all">
+        <i class="fa-solid fa-bell text-[13px]"></i>
+        <span class="absolute top-[6px] right-[6px] w-[14px] h-[14px] bg-amber-500 rounded-full text-[8px] text-white flex items-center justify-center font-bold leading-none">3</span>
+      </button>
+
+      <!-- Export button -->
+      <button class="glow-export flex items-center gap-2 px-4 py-[9px] bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-cyan-500 text-white text-[12px] font-bold rounded-xl transition-all duration-200 border border-blue-400/20">
+        <i class="fa-solid fa-download text-[11px]"></i>
+        Export ESG Report (PDF)
+      </button>
+
+      <!-- Divider -->
+      <div class="w-px h-7 bg-dash-border mx-1"></div>
+
+      <!-- User profile -->
+      <div class="flex items-center gap-2.5 cursor-pointer group">
+        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-600 to-violet-600 flex items-center justify-center text-[11px] font-extrabold text-white flex-shrink-0" style="box-shadow:0 0 10px rgba(99,102,241,.35)">ED</div>
+        <div class="hidden lg:block leading-none">
+          <p class="text-[12px] font-semibold text-gray-200 group-hover:text-white transition-colors">Eleanor Davis</p>
+          <p class="text-[10px] text-blue-400 mt-[2px]">ESG Director — Global Corp</p>
+        </div>
+        <i class="fa-solid fa-chevron-down text-[10px] text-gray-600 hidden lg:block"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Scrollable Content ────────────────────────────────────────── -->
+  <main class="flex-1 overflow-y-auto px-6 pt-5 pb-8 space-y-5 min-w-0">
+
+    <!-- ── KPI CARDS ──────────────────────────────────────────────── -->
+    <div class="grid grid-cols-2 xl:grid-cols-4 gap-4">
+
+      <!-- Card 1 · Detections Prevented -->
+      <div class="bg-dash-card border border-dash-border rounded-2xl p-5 c-hover cursor-default">
+        <div class="flex items-start justify-between mb-4">
+          <div>
+            <p class="text-[10px] font-bold text-gray-600 uppercase tracking-widest leading-tight">Detections<br>Prevented</p>
+            <p class="text-[10px] text-gray-700 mt-1">This Month</p>
+          </div>
+          <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-shield-halved text-blue-400 text-[15px]"></i>
+          </div>
+        </div>
+        <p class="text-[2.4rem] font-extrabold text-blue-300 tracking-tight leading-none mb-3">14</p>
+        <div class="flex items-center gap-1.5 flex-wrap">
+          <i class="fa-solid fa-arrow-trend-down text-emerald-400 text-xs"></i>
+          <span class="text-[12px] text-emerald-400 font-bold">−12%</span>
+          <span class="text-[11px] text-gray-600">vs last month</span>
+        </div>
+        <div class="mt-3 pt-3 border-t border-white/[.04] text-[10px] text-gray-700">452 active sensors · zero breaches</div>
+      </div>
+
+      <!-- Card 2 · Active Sensor Tablets -->
+      <div class="bg-dash-card border border-dash-border rounded-2xl p-5 c-hover cursor-default">
+        <div class="flex items-start justify-between mb-4">
+          <div>
+            <p class="text-[10px] font-bold text-gray-600 uppercase tracking-widest leading-tight">Active Sensor<br>Tablets</p>
+            <p class="text-[10px] text-gray-700 mt-1">Online Now</p>
+          </div>
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-tablet-screen-button text-emerald-400 text-[15px]"></i>
+          </div>
+        </div>
+        <p class="text-[2.4rem] font-extrabold text-emerald-300 tracking-tight leading-none mb-3">452</p>
+        <div class="flex items-center gap-1.5 flex-wrap">
+          <i class="fa-solid fa-bolt text-emerald-400 text-xs"></i>
+          <span class="text-[12px] text-emerald-400 font-bold">+3 units</span>
+          <span class="text-[11px] text-gray-600">added this week</span>
+        </div>
+        <div class="mt-3 pt-3 border-t border-white/[.04] text-[10px] text-gray-700">11″ tablet array · 4 airports</div>
+      </div>
+
+      <!-- Card 3 · Protected Airports -->
+      <div class="bg-dash-card border border-dash-border rounded-2xl p-5 c-hover cursor-default">
+        <div class="flex items-start justify-between mb-4">
+          <div>
+            <p class="text-[10px] font-bold text-gray-600 uppercase tracking-widest leading-tight">Protected<br>Airports</p>
+            <p class="text-[10px] text-gray-700 mt-1">Taiwan Network</p>
+          </div>
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-globe text-cyan-400 text-[15px]"></i>
+          </div>
+        </div>
+        <p class="text-[2.4rem] font-extrabold text-cyan-300 tracking-tight leading-none mb-3">4</p>
+        <p class="text-[12px] text-cyan-400 font-bold">TPE · TSA · KHH · RMQ</p>
+        <div class="mt-3 pt-3 border-t border-white/[.04] text-[10px] text-gray-700">Full sensor coverage active</div>
+      </div>
+
+      <!-- Card 4 · System Uptime -->
+      <div class="bg-dash-card border border-dash-border rounded-2xl p-5 c-hover cursor-default">
+        <div class="flex items-start justify-between mb-4">
+          <div>
+            <p class="text-[10px] font-bold text-gray-600 uppercase tracking-widest leading-tight">System<br>Uptime</p>
+            <p class="text-[10px] text-gray-700 mt-1">Last 30 Days</p>
+          </div>
+          <div class="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center flex-shrink-0">
+            <i class="fa-solid fa-circle-check text-violet-400 text-[15px]"></i>
+          </div>
+        </div>
+        <p class="text-[2.4rem] font-extrabold text-violet-300 tracking-tight leading-none mb-3">99.9%</p>
+        <!-- Uptime progress bar -->
+        <div class="w-full h-[4px] bg-white/[.06] rounded-full mb-3 overflow-hidden">
+          <div class="bar-fill h-full bg-gradient-to-r from-violet-500 to-violet-400 rounded-full" style="width:99.9%"></div>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <i class="fa-solid fa-lock text-violet-400 text-[10px]"></i>
+          <span class="text-[12px] text-violet-400 font-bold">SLA Met</span>
+          <span class="text-[11px] text-gray-600">· Enterprise tier</span>
+        </div>
+        <div class="mt-3 pt-3 border-t border-white/[.04] text-[10px] text-gray-700">0 outages this month</div>
+      </div>
+    </div>
+
+    <!-- ── BAR CHART ───────────────────────────────────────────────── -->
+    <div class="bg-dash-card border border-dash-border rounded-2xl p-6">
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+        <div>
+          <h2 class="text-[14px] font-extrabold text-gray-100">Detection Alerts by Month</h2>
+          <p class="text-[11px] text-gray-600 mt-1">
+            6-month rolling trend &nbsp;·&nbsp; All incidents resolved &nbsp;·&nbsp; Zero privacy breaches recorded
+          </p>
+        </div>
+        <div class="flex items-center gap-5 text-[11px] text-gray-600">
+          <span class="flex items-center gap-1.5">
+            <span class="w-3 h-[10px] rounded-[3px] inline-block" style="background:linear-gradient(180deg,#60a5fa,#1d4ed8)"></span>
+            Detection Alerts
+          </span>
+          <span class="flex items-center gap-1.5">
+            <span class="w-[10px] h-[10px] rounded-full bg-emerald-400/55 inline-block"></span>
+            100% Prevented
+          </span>
+        </div>
+      </div>
+      <div style="position:relative;height:220px;">
+        <canvas id="detectionChart"></canvas>
+      </div>
+    </div>
+
+    <!-- ── BOTTOM GRID ─────────────────────────────────────────────── -->
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-5">
+
+      <!-- Left · Airport Status -->
+      <div class="bg-dash-card border border-dash-border rounded-2xl p-6">
+        <div class="flex items-center justify-between mb-5">
+          <div>
+            <h2 class="text-[14px] font-extrabold text-gray-100">Airport Status</h2>
+            <p class="text-[11px] text-gray-600 mt-1">Current security status per location</p>
+          </div>
+          <span class="text-[10px] text-gray-600 bg-[#091626] border border-dash-border px-2.5 py-[5px] rounded-lg font-semibold">4 Airports</span>
+        </div>
+
+        <div class="space-y-2.5">
+
+          <!-- TPE T1 · Secure -->
+          <div class="r-hover flex items-center justify-between p-3.5 rounded-xl bg-dash-row border border-dash-border cursor-pointer group">
+            <div class="flex items-center gap-3 min-w-0">
+              <div class="w-9 h-9 rounded-xl bg-[#091626] border border-dash-border flex items-center justify-center flex-shrink-0">
+                <i class="fa-solid fa-location-dot text-blue-400 text-[12px]"></i>
+              </div>
+              <div class="min-w-0">
+                <p class="text-[13px] font-semibold text-gray-200 group-hover:text-white truncate transition-colors">TPE Terminal 1</p>
+                <p class="text-[11px] text-gray-600">Taoyuan &nbsp;·&nbsp; 128 sensors &nbsp;·&nbsp; <span class="text-blue-400/70">100.0%</span></p>
+              </div>
+            </div>
+            <span class="inline-flex items-center gap-1.5 px-3 py-[5px] rounded-full text-[11px] font-bold bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 flex-shrink-0 ml-3">
+              <span class="w-[6px] h-[6px] rounded-full bg-emerald-400 live-dot"></span>
+              Secure
+            </span>
+          </div>
+
+          <!-- TPE T2 · Caution -->
+          <div class="r-hover flex items-center justify-between p-3.5 rounded-xl bg-dash-row border border-dash-border cursor-pointer group">
+            <div class="flex items-center gap-3 min-w-0">
+              <div class="w-9 h-9 rounded-xl bg-[#091626] border border-dash-border flex items-center justify-center flex-shrink-0">
+                <i class="fa-solid fa-location-dot text-blue-400 text-[12px]"></i>
+              </div>
+              <div class="min-w-0">
+                <p class="text-[13px] font-semibold text-gray-200 group-hover:text-white truncate transition-colors">TPE Terminal 2</p>
+                <p class="text-[11px] text-gray-600">Taoyuan &nbsp;·&nbsp; 115 sensors &nbsp;·&nbsp; <span class="text-blue-400/70">99.8%</span></p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0 ml-3">
+              <span class="inline-flex items-center gap-1 text-[10px] text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2 py-[3px] rounded-full font-extrabold">
+                <i class="fa-solid fa-triangle-exclamation text-[8px]"></i>2
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-[5px] rounded-full text-[11px] font-bold bg-amber-500/10 border border-amber-500/25 text-amber-400">
+                <span class="w-[6px] h-[6px] rounded-full bg-amber-400 live-dot"></span>
+                Caution
+              </span>
+            </div>
+          </div>
+
+          <!-- TSA · Secure -->
+          <div class="r-hover flex items-center justify-between p-3.5 rounded-xl bg-dash-row border border-dash-border cursor-pointer group">
+            <div class="flex items-center gap-3 min-w-0">
+              <div class="w-9 h-9 rounded-xl bg-[#091626] border border-dash-border flex items-center justify-center flex-shrink-0">
+                <i class="fa-solid fa-location-dot text-blue-400 text-[12px]"></i>
+              </div>
+              <div class="min-w-0">
+                <p class="text-[13px] font-semibold text-gray-200 group-hover:text-white truncate transition-colors">TSA Songshan Intl</p>
+                <p class="text-[11px] text-gray-600">Taipei City &nbsp;·&nbsp; 89 sensors &nbsp;·&nbsp; <span class="text-blue-400/70">99.9%</span></p>
+              </div>
+            </div>
+            <span class="inline-flex items-center gap-1.5 px-3 py-[5px] rounded-full text-[11px] font-bold bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 flex-shrink-0 ml-3">
+              <span class="w-[6px] h-[6px] rounded-full bg-emerald-400 live-dot"></span>
+              Secure
+            </span>
+          </div>
+
+          <!-- KHH · Warning -->
+          <div class="r-hover flex items-center justify-between p-3.5 rounded-xl bg-dash-row border border-dash-border cursor-pointer group">
+            <div class="flex items-center gap-3 min-w-0">
+              <div class="w-9 h-9 rounded-xl bg-[#091626] border border-dash-border flex items-center justify-center flex-shrink-0">
+                <i class="fa-solid fa-location-dot text-blue-400 text-[12px]"></i>
+              </div>
+              <div class="min-w-0">
+                <p class="text-[13px] font-semibold text-gray-200 group-hover:text-white truncate transition-colors">KHH Kaohsiung Intl</p>
+                <p class="text-[11px] text-gray-600">Kaohsiung &nbsp;·&nbsp; 94 sensors &nbsp;·&nbsp; <span class="text-blue-400/70">99.7%</span></p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 flex-shrink-0 ml-3">
+              <span class="inline-flex items-center gap-1 text-[10px] text-orange-400 bg-orange-500/10 border border-orange-500/20 px-2 py-[3px] rounded-full font-extrabold">
+                <i class="fa-solid fa-triangle-exclamation text-[8px]"></i>1
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-[5px] rounded-full text-[11px] font-bold bg-orange-500/10 border border-orange-500/25 text-orange-400">
+                <span class="w-[6px] h-[6px] rounded-full bg-orange-400 live-dot"></span>
+                Warning
+              </span>
+            </div>
+          </div>
+
+          <!-- RMQ · Secure -->
+          <div class="r-hover flex items-center justify-between p-3.5 rounded-xl bg-dash-row border border-dash-border cursor-pointer group">
+            <div class="flex items-center gap-3 min-w-0">
+              <div class="w-9 h-9 rounded-xl bg-[#091626] border border-dash-border flex items-center justify-center flex-shrink-0">
+                <i class="fa-solid fa-location-dot text-blue-400 text-[12px]"></i>
+              </div>
+              <div class="min-w-0">
+                <p class="text-[13px] font-semibold text-gray-200 group-hover:text-white truncate transition-colors">RMQ Taichung Intl</p>
+                <p class="text-[11px] text-gray-600">Taichung &nbsp;·&nbsp; 26 sensors &nbsp;·&nbsp; <span class="text-blue-400/70">100.0%</span></p>
+              </div>
+            </div>
+            <span class="inline-flex items-center gap-1.5 px-3 py-[5px] rounded-full text-[11px] font-bold bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 flex-shrink-0 ml-3">
+              <span class="w-[6px] h-[6px] rounded-full bg-emerald-400 live-dot"></span>
+              Secure
+            </span>
+          </div>
+
+        </div><!-- /space-y -->
+      </div>
+
+      <!-- Right · Live Sensor Feed -->
+      <div class="bg-dash-card border border-dash-border rounded-2xl p-6 flex flex-col">
+        <div class="flex items-center justify-between mb-5">
+          <div>
+            <h2 class="text-[14px] font-extrabold text-gray-100">Live Sensor Feed</h2>
+            <p class="text-[11px] text-gray-600 mt-1">Real-time detection events &nbsp;·&nbsp; Auto-refresh 30 s</p>
+          </div>
+          <span class="flex items-center gap-1.5 text-[10px] text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-3 py-[5px] rounded-full font-extrabold tracking-wider">
+            <span class="w-[6px] h-[6px] rounded-full bg-emerald-400 live-dot"></span>
+            LIVE
+          </span>
+        </div>
+
+        <!-- Table -->
+        <div class="flex-1 overflow-auto">
+          <table class="w-full border-collapse" style="font-size:12px;">
+            <thead>
+              <tr class="text-gray-600 text-[10px] uppercase tracking-widest border-b border-dash-border">
+                <th class="text-left pb-3 pr-4 font-bold">Timestamp</th>
+                <th class="text-left pb-3 pr-4 font-bold">Restroom ID</th>
+                <th class="text-left pb-3 pr-4 font-bold hidden sm:table-cell">Zone</th>
+                <th class="text-right pb-3 font-bold">Status</th>
+              </tr>
+            </thead>
+            <tbody id="feedTable">
+              <!-- rows injected by JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Feed footer -->
+        <div class="mt-4 pt-3 border-t border-dash-border flex items-center justify-between text-[10px] text-gray-700">
+          <span class="flex items-center gap-1.5">
+            <i class="fa-solid fa-tower-broadcast text-blue-500/45 text-[10px]"></i>
+            Last sync: <span id="lastSync" class="font-mono ml-1"></span>
+          </span>
+          <span>Showing <span id="feedCount">8</span> recent events</span>
+        </div>
+      </div>
+
+    </div><!-- /bottom grid -->
+
+    <!-- ── Page Footer ─────────────────────────────────────────────── -->
+    <div class="flex flex-wrap items-center justify-between gap-3 pt-2 pb-1 border-t border-[#071525] text-[10px] text-gray-700">
+      <span class="flex items-center gap-2">
+        <i class="fa-solid fa-shield text-blue-500/35"></i>
+        Aegis Privacy Platform v2.4.1 &nbsp;·&nbsp; Taiwan Airport Anti-Hidden Camera Network
+      </span>
+      <div class="flex items-center gap-2.5">
+        <span class="px-2 py-[3px] border border-dash-border rounded-md">EU GDPR</span>
+        <span class="px-2 py-[3px] border border-dash-border rounded-md">ISO 27001</span>
+        <span class="px-2 py-[3px] border border-emerald-500/20 rounded-md text-emerald-700 font-semibold">ESG Tier-A</span>
+        <span>Data residency: EU-West</span>
+      </div>
+    </div>
+
+  </main>
+</div><!-- /main column -->
+
+
+<!-- ════════════════════════════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════════════════════════════ -->
+<script>
+/* ─── Feed data ──────────────────────────────────────────────────── */
+const feedData = [
+  { ts:'14:32:07', rid:'TPE-T1-R04', zone:'Terminal 1',  type:'clear' },
+  { ts:'14:28:43', rid:'TPE-T2-R07', zone:'Terminal 2',  type:'clear' },
+  { ts:'14:25:19', rid:'KHH-R02',    zone:'Kaohsiung',   type:'alert' },
+  { ts:'14:21:55', rid:'TSA-R05',    zone:'Songshan',    type:'clear' },
+  { ts:'14:18:30', rid:'TPE-T1-R11', zone:'Terminal 1',  type:'clear' },
+  { ts:'14:15:08', rid:'RMQ-R01',    zone:'Taichung',    type:'clear' },
+  { ts:'14:12:44', rid:'TPE-T2-R03', zone:'Terminal 2',  type:'alert' },
+  { ts:'14:09:22', rid:'KHH-R06',    zone:'Kaohsiung',   type:'clear' },
+];
+
+function renderFeed() {
+  const tbody = document.getElementById('feedTable');
+  tbody.innerHTML = feedData.map((r, i) => {
+    const isAlert = r.type === 'alert';
+    const badge = isAlert
+      ? `<span class="inline-flex items-center gap-1 text-amber-400 bg-amber-500/10 border border-amber-500/25 px-2.5 py-[3px] rounded-full text-[10px] font-bold whitespace-nowrap">
+           <i class="fa-solid fa-triangle-exclamation text-[8px]"></i> Alert → Cleared
+         </span>`
+      : `<span class="inline-flex items-center gap-1 text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-2.5 py-[3px] rounded-full text-[10px] font-bold">
+           <i class="fa-solid fa-circle-check text-[8px]"></i> Cleared
+         </span>`;
+    const border = i < feedData.length - 1 ? 'border-b border-[#070f1c]' : '';
+    return `
+      <tr class="${border} hover:bg-blue-500/[.035] transition-colors slide-up" style="animation-delay:${i * 40}ms">
+        <td class="py-[10px] pr-4 font-mono text-gray-600 text-[11px] whitespace-nowrap">${r.ts}</td>
+        <td class="py-[10px] pr-4 text-gray-200 font-semibold whitespace-nowrap">${r.rid}</td>
+        <td class="py-[10px] pr-4 text-gray-500 hidden sm:table-cell whitespace-nowrap">${r.zone}</td>
+        <td class="py-[10px] text-right whitespace-nowrap">${badge}</td>
+      </tr>`;
+  }).join('');
+}
+renderFeed();
+
+/* ─── UTC clock + last sync ──────────────────────────────────────── */
+function tick() {
+  const now = new Date();
+  const pad = n => String(n).padStart(2,'0');
+  const d = now.toUTCString().slice(0,16);
+  const t = `${pad(now.getUTCHours())}:${pad(now.getUTCMinutes())}:${pad(now.getUTCSeconds())}`;
+  document.getElementById('utcClock').textContent = `${d}  ${t} UTC`;
+  document.getElementById('lastSync').textContent  = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+}
+tick();
+setInterval(tick, 1000);
+
+/* ─── Refresh button ─────────────────────────────────────────────── */
+function triggerRefresh() {
+  const icon = document.getElementById('refreshIcon');
+  icon.classList.add('fa-spin');
+  setTimeout(() => icon.classList.remove('fa-spin'), 900);
+}
+
+/* ─── Chart.js ───────────────────────────────────────────────────── */
+(function initChart() {
+  const canvas = document.getElementById('detectionChart');
+  const ctx    = canvas.getContext('2d');
+
+  /* Blue vertical gradient */
+  const grad = ctx.createLinearGradient(0, 0, 0, 220);
+  grad.addColorStop(0,   'rgba(96,165,250,.92)');
+  grad.addColorStop(0.6, 'rgba(59,130,246,.70)');
+  grad.addColorStop(1,   'rgba(29,78,216,.40)');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels  : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      datasets: [{
+        label          : 'Detection Alerts',
+        data           : [22, 19, 24, 16, 14, 11],
+        backgroundColor: grad,
+        borderColor    : 'rgba(96,165,250,.45)',
+        borderWidth    : 1,
+        borderRadius   : 6,
+        borderSkipped  : false,
+        hoverBackgroundColor: 'rgba(125,180,255,.95)',
+      }]
+    },
+    options: {
+      responsive         : true,
+      maintainAspectRatio: false,
+      animation          : { duration: 900, easing: 'easeOutQuart' },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#0b1a30',
+          borderColor    : 'rgba(59,130,246,.45)',
+          borderWidth    : 1,
+          titleColor     : '#93c5fd',
+          bodyColor      : '#f1f5f9',
+          padding        : 14,
+          cornerRadius   : 10,
+          displayColors  : false,
+          callbacks: {
+            title : items => `${items[0].label} 2026`,
+            label : item  => `  ${item.raw} alerts  ·  All Prevented ✓`,
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid  : { color: 'rgba(13,30,54,.85)', drawBorder: false },
+          ticks : { color: '#6b7280', font: { size: 11 } },
+          border: { display: false }
+        },
+        y: {
+          grid  : { color: 'rgba(13,30,54,.85)', drawBorder: false },
+          ticks : { color: '#6b7280', font: { size: 11 }, stepSize: 5 },
+          border: { display: false },
+          min   : 0,
+          max   : 30,
+        }
+      }
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
-
-<section id="history" class="py-32 bg-black relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            <div class="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] bg-blue-900/10 rounded-full blur-[150px]"></div>
-            <div class="absolute -bottom-[20%] -right-[10%] w-[50%] h-[50%] bg-purple-900/10 rounded-full blur-[150px]"></div>
-        </div>
-
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="mb-24">
-                <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-6 uppercase">
-                    Our Journey.<br>
-                    <span class="text-gray-500">Defining the New Possible.</span>
-                </h2>
-                <p class="text-xl text-gray-400 max-w-xl font-light">
-                    從單一設想出發，到重新定義全球基礎設施。這不僅是時間的推移，更是技術邊界的擴張。
-                </p>
-            </div>
-
-            <div class="space-y-32">
-                
-                <div class="flex flex-col md:flex-row gap-12 items-start group">
-                    <div class="md:w-1/3">
-                        <span class="text-6xl md:text-8xl font-black text-white/10 group-hover:text-blue-500/30 transition-colors duration-700 italic">2020</span>
-                    </div>
-                    <div class="md:w-2/3 border-t border-zinc-800 pt-8">
-                        <h3 class="text-2xl font-bold uppercase tracking-widest text-blue-400 mb-4">The Genesis</h3>
-                        <h4 class="text-3xl md:text-4xl font-bold mb-6">挑戰重力的開端</h4>
-                        <p class="text-gray-400 text-lg leading-relaxed font-light">
-                            OrionGO 於矽谷與台北同步啟動。我們不只是成立一家公司，而是為了解決跨場域通訊的底層限制。在第一年，我們完成了初步的「全空間定位算法」，奠定了全場域智慧生態系的基石。
-                        </p>
-                    </div>
-                </div>
-
-                <div class="flex flex-col md:flex-row gap-12 items-start group">
-                    <div class="md:w-1/3">
-                        <span class="text-6xl md:text-8xl font-black text-white/10 group-hover:text-purple-500/30 transition-colors duration-700 italic">2022</span>
-                    </div>
-                    <div class="md:w-2/3 border-t border-zinc-800 pt-8">
-                        <h3 class="text-2xl font-bold uppercase tracking-widest text-purple-400 mb-4">The Breakthrough</h3>
-                        <h4 class="text-3xl md:text-4xl font-bold mb-6">數位雙生的奇點</h4>
-                        <p class="text-gray-400 text-lg leading-relaxed font-light">
-                            這一年，我們成功將實體空間與數位數據完整對標。OrionGO 數位雙生平台首度應用於大型智慧工業區，透過邊緣運算減少了 40% 的能源浪費。我們開始證明，科技能真正改善物理世界的效率。
-                        </p>
-                    </div>
-                </div>
-
-                <div class="flex flex-col md:flex-row gap-12 items-start group">
-                    <div class="md:w-1/3">
-                        <span class="text-6xl md:text-8xl font-black text-white/10 group-hover:text-pink-500/30 transition-colors duration-700 italic">2024</span>
-                    </div>
-                    <div class="md:w-2/3 border-t border-zinc-800 pt-8">
-                        <h3 class="text-2xl font-bold uppercase tracking-widest text-pink-400 mb-4">Global Impact</h3>
-                        <h4 class="text-3xl md:text-4xl font-bold mb-6">定義新世代國防</h4>
-                        <p class="text-gray-400 text-lg leading-relaxed font-light">
-                            Multi-Agent AI 系統正式商用化。OrionGO 的技術被整合進新世代安全架構中，提供無人干預的自主反應系統。我們在航空、國防與關鍵基礎設施領域成為全球合作夥伴。
-                        </p>
-                    </div>
-                </div>
-
-                <div class="flex flex-col md:flex-row gap-12 items-start group">
-                    <div class="md:w-1/3">
-                        <span class="text-6xl md:text-8xl font-black text-white/20 group-hover:text-white transition-colors duration-700 italic">2026</span>
-                    </div>
-                    <div class="md:w-2/3 border-t border-white pt-8">
-                        <h3 class="text-2xl font-bold uppercase tracking-widest text-white mb-4">The New Frontier</h3>
-                        <h4 class="text-3xl md:text-4xl font-bold mb-6">全自動化社會的基石</h4>
-                        <p class="text-gray-400 text-lg leading-relaxed font-light font-medium">
-                            未來已至。我們的「全場域智慧生態系」已成為智慧城市運行的標準協議。從邊緣到雲端，OrionGO 正在構建一個更加智能、高效且永續的自動化世界。
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
